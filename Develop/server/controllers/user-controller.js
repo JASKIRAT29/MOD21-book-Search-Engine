@@ -18,8 +18,9 @@ module.exports = {
   },
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
   async createUser({ body }, res) {
+    console.log(body);
     const user = await User.create(body);
-
+console.log(user);
     if (!user) {
       return res.status(400).json({ message: 'Something is wrong!' });
     }
